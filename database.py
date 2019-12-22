@@ -105,7 +105,7 @@ class FoodNutrient(Base):
     __tablename__ = 'food_nutrient'
     id = Column(Integer, primary_key=True)
     fdc_id = Column(Integer, ForeignKey('food.fdc_id'))
-	nutrient_id	= Column(Integer, ForeignKey('nutrient.id'))
+    nutrient_id	= Column(Integer, ForeignKey('nutrient.id'))
     amount = Column(Float)
     data_points = Column(Integer)
     derivation_id = Column(Integer)
