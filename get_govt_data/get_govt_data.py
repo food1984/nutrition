@@ -1,20 +1,24 @@
 import os
 import urllib3
-import json
 import logging
 from sqlalchemy import create_engine
 import pandas as pd
 from zipfile37 import ZipFile
 import glob
-from database import (Category, Attribute, Component, FoodPortion,
+from database import (FoodCategory, FoodAttribute, FoodComponent, FoodPortion,
                       MeasureUnit, Nutrient, NutrientConversionFactor,
-                      NutrientSource, NutrientDerivation,
+                      NutrientSource, NutrientDerivation, BrandedFood,
                       ProteinConversionFactor, WWIEAFoodCategory)
-from config import Config
 
 
 def cleanup(dir):
     logging.info('Cleaning up, directory: {}'.format(dir))
+
+    try:
+        os.mkdir(dir)
+    except FileExistsError as F:
+        logging.debug('Directory, {}, already exists'.format(dir))
+
     try:
         map(os.unlink, glob.glob(os.path.join(dir, "*")))
     except FileNotFoundError as F:
@@ -35,6 +39,7 @@ def download_file(url, dir):
     logging.info("Downloading: %s Bytes: %s" % (file_name, file_size))
 
     file_size_dl = 0
+
     chunk_size = 8192
 
     with open(os.path.join(dir, file_name), 'wb') as out:
@@ -63,7 +68,9 @@ def convert_boolean(val):
     return False
 
 
-def load_data(file_name, table_name):
+def load_data(file_name, engine):
+    table_name, ext = file_name.split('.')[0]
+
     logging.info('Processing file: {}, table: {}'.format(
         file_name, table_name))
 
@@ -93,27 +100,23 @@ def main():
 
     BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
-    engine = create_engine(Config.SQLALCHEMY_DATABASE_URI)
+    SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI',
+                                        'sqlite:///' + os.path.join(BASE_DIR,
+                                                                    '..',
+                                                                    'app.db'))
 
-    URL = os.environ.get('GOVT_DATA_URL') or \
-        'https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_csv_2019-12-17.zip'
+    engine = create_engine(SQLALCHEMY_DATABASE_URI)
 
-    DATA_DIR = os.environ.get('DATA_DIR') or 'data'
-    DATA_DIR = os.path.join(BASE_DIR, DATA_DIR)
+    URL = os.getenv('GOVT_DATA_URL',
+                    'https://fdc.nal.usda.gov/fdc-datasets/'
+                    'FoodData_Central_csv_2019-12-17.zip')
 
-    CONFIG_FILE = os.environ.get('CONFIG_FILE') or 'convert.json'
-    CONFIG_FILE = os.path.join(BASE_DIR, CONFIG_FILE)
+    DATA_DIR = os.path.join(BASE_DIR, os.getenv('DATA_DIR', 'data'))
 
-    download_file(URL, DATA_DIR)
+#    download_file(URL, DATA_DIR)
 
-    with open(CONFIG_FILE) as json_file:
-        logging.debug('Loading config file: {}'.format(CONFIG_FILE))
-        mappings = json.load(json_file)
-        logging.debug('Finished loading config file: {}'.format(CONFIG_FILE))
-
-        for file_name in glob.glob(os.path.join(DATA_DIR, '*.csv')):
-            if file_name in mappings:
-                load_data(file_name, mappings[file_name]['model'])
+    for file in glob.glob(os.path.join(DATA_DIR, '*.csv')):
+        load_data(os.path.basename(file), engine)
 
     logging.info('Finished')
 

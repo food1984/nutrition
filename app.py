@@ -5,7 +5,8 @@ from flask_migrate import Migrate
 
 from database import (Base, Attribute, Category, Component, FoodPortion,
                       MeasureUnit, Nutrient, NutrientConversionFactor,
-                      NutrientDerivation, NutrientSource,
+                      NutrientDerivation, NutrientSource, Food,
+                      NutrientIncomingName, CalorieConversionFactor,
                       ProteinConversionFactor, WWIEAFoodCategory)
 from sqlalchemy import (create_engine, MetaData)
 from sqlalchemy.orm import (sessionmaker, scoped_session)
@@ -20,6 +21,7 @@ metadata = MetaData(engine)
 db_session = scoped_session(sessionmaker(autocommit=False,
                                          autoflush=False,
                                          bind=engine))
+
 
 Base.query = db_session.query_property()
 
