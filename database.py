@@ -55,7 +55,7 @@ class FoodAttribute(Base):
     food = relationship("Food",
                         back_populates="food_attribute")
     attribute_type = relationship("FoodAttributeType",
-                                  back_populate="food_attribute")
+                                  back_populates="food_attribute")
 
 
 class FoodAttributeType(Base):
@@ -70,14 +70,14 @@ class FoodAttributeType(Base):
 class FoodCalorieConversionFactor(Base):
     __tablename__ = 'food_calorie_conversion_factor'
     food_nutrient_conversion_factor_id = \
-        Column(Integer, primary_key=True,
-               ForeignKey('food_nutrient_conversion_factor.id'))
+        Column(Integer, ForeignKey('food_nutrient_conversion_factor.id'),
+               primary_key=True)
     protein_value = Column(Float)
     fat_value = Column(Float)
     carbohydrate_value = Column(Float)
     nutrient_conversion_factor = \
         relationship("FoodNutrientConversionFactor",
-                     back_populate="food_calorie_conversion_factor")
+                     back_populates="food_calorie_conversion_factor")
 
 
 class FoodCategory(Base):
@@ -176,7 +176,7 @@ class FoodUpdateLogEntry(Base):
 class FoundationFood(Base):
     __tablename__ = 'foundation_food'
     fdc_id = Column(Integer, ForeignKey('food.fdc_id'))
-    NDB_number = Column(Integer)
+    NDB_number = Column(Integer, primary_key=True)
     footnote = Column(String(200))
     food = relationship("Food",
                         back_populates="food_nutrient_conversion_factor")
@@ -194,7 +194,7 @@ class Nutrient(Base):
     name = Column(String(200))
     nutrient_nbr = Column(Integer)
     rank = Column(Integer)
-    food _nutrient= relationship("FoodNutrient", back_populates="nutrient")
+    food_nutrient = relationship("FoodNutrient", back_populates="nutrient")
 
 
 class NutrientIncomingName(Base):
@@ -202,13 +202,6 @@ class NutrientIncomingName(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(200))
     nutrient_id = Column(Integer)
-
-
-
-class FoodProteinConversionFactor(Base):
-    __tablename__ = 'food_protein_conversion_factor'
-    id = Column(Integer, primary_key=True)
-    value = Column(Float)
 
 
 class WWIEAFoodCategory(Base):

@@ -5,10 +5,13 @@ from sqlalchemy import create_engine
 import pandas as pd
 from zipfile37 import ZipFile
 import glob
-from database import (FoodCategory, FoodAttribute, FoodComponent, FoodPortion,
-                      MeasureUnit, Nutrient, NutrientConversionFactor,
-                      NutrientSource, NutrientDerivation, BrandedFood,
-                      ProteinConversionFactor, WWIEAFoodCategory)
+from database import (FoodCategory, FoodAttribute, FoodComponent,
+                      FoodPortion, FoodNutrient, MeasureUnit, Nutrient,
+                      FoodNutrientConversionFactor, FoodNutrientSource,
+                      FoodNutrientDerivation, BrandedFood, Food,
+                      FoodAttributeType, FoodCalorieConversionFactor,
+                      FoodUpdateLogEntry, FoundationFood,
+                      FoodProteinConversionFactor, WWIEAFoodCategory)
 
 
 def cleanup(dir):
