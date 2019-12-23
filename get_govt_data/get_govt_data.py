@@ -19,6 +19,7 @@ def cleanup(dir):
 
     try:
         os.mkdir(dir)
+        logging.debug('Creating Directory, {}'.format(dir))
     except FileExistsError as F:
         logging.debug('Directory, {}, already exists'.format(dir))
 
@@ -27,6 +28,7 @@ def cleanup(dir):
     except FileNotFoundError as F:
         logging.info('Directory, {}, not found ... creating'.format(dir))
         os.mkdir(dir)
+    logging.info('Successfully cleaned, {}'.format(dir))
 
 
 def download_file(url, dir):

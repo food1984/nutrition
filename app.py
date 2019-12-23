@@ -3,11 +3,13 @@ from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
-from database import (Base, Attribute, Category, Component, FoodPortion,
-                      MeasureUnit, Nutrient, NutrientConversionFactor,
-                      NutrientDerivation, NutrientSource, Food,
-                      NutrientIncomingName, CalorieConversionFactor,
-                      ProteinConversionFactor, WWIEAFoodCategory)
+from database import (Base, FoodAttribute, FoodCategory, FoodComponent,
+                      FoodPortion, MeasureUnit, Nutrient, FoodNutrient,
+                      FoodNutrientConversionFactor, FoodNutrientDerivation,
+                      FoodNutrientSource, Food, NutrientIncomingName,
+                      FoodUpdateLogEntry, FoodCalorieConversionFactor,
+                      FoodProteinConversionFactor, FoodAttributeType,
+                      WWIEAFoodCategory)
 from sqlalchemy import (create_engine, MetaData)
 from sqlalchemy.orm import (sessionmaker, scoped_session)
 

@@ -1,5 +1,6 @@
 import unittest
-from get_govt_data.get_govt_data import (convert_boolean)
+import mock
+from get_govt_data.get_govt_data import (convert_boolean, cleanup)
 
 
 class TestGovtData(unittest.TestCase):
@@ -16,6 +17,27 @@ class TestGovtData(unittest.TestCase):
         self.assertEqual(True, convert_boolean('Yes'))
         self.assertEqual(True, convert_boolean('YES'))
         self.assertEqual(True, convert_boolean('yes'))
+
+    @mock.patch('get_govt_data.get_govt_data.logging')
+    def test_cleanup_successful(self, mock_logging):
+        test_dir = 'test'
+        cleanup(test_dir)
+        mock_logging.info.assert_called_with('Successfully cleaned, {}'.
+                                             format(test_dir))
+
+    @mock.patch('get_govt_data.get_govt_data.logging')
+    def test_cleanup_directory_exists(self, mock_logging):
+        test_dir = 'test'
+        self.assertRaises(FileExistsError, cleanup(test_dir))
+        mock_logging.info.assert_called_with('Successfully cleaned, {}'.
+                                             format(test_dir))
+
+    @mock.patch('get_govt_data.get_govt_data.logging')
+    def test_cleanup_no_files(self, mock_logging):
+        test_dir = 'test'
+        self.assertRaises(FileNotFoundError, cleanup(test_dir))
+        mock_logging.info.assert_called_with('Successfully cleaned, {}'.
+                                             format(test_dir))
 
 
 if __name__ == '__main__':
