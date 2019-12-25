@@ -1,3 +1,5 @@
+flask
+flask_fixtures
 pytest==5.3.2
 coverage==4.5.4
 coveralls==1.9.2

@@ -1,0 +1,14 @@
+[
+  {
+    "table": "food",
+    "records": [
+      {
+        "fdc_id": 1,
+        "data_type": 1,
+        "description": "This is a test",
+        "food_category_id": 1,
+        "publication_date": "2017-01-01"
+      }
+    ]
+  }
+]

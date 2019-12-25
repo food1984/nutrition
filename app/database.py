@@ -1,10 +1,7 @@
 from sqlalchemy import (Column, Integer, String, Boolean, Float, Date,
                         ForeignKey)
 from sqlalchemy.orm import relationship
-from sqlalchemy.ext.declarative import declarative_base
-
-
-Base = declarative_base()
+from app import Base
 
 
 class BrandedFood(Base):

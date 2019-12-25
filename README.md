@@ -6,3 +6,17 @@
 This is my attempt at learning more `Flask` and `Angular` by creating a recipe system which includes nutrition ability. 
 
 Let's see how far I get with this.
+
+### Troubleshooting
+
+#### Problem
+If executing `flask initdb` results in:
+```bash
+Usage: flask [OPTIONS] COMMAND [ARGS]...
+Try "Flask --help" for help.
+
+Error: No such command "initdb".
+```
+
+#### Solution
+Make sure `FLASK_APP` variable is set to 'nutrition.py'
