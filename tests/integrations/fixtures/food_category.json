@@ -1,0 +1,27 @@
+[
+  {
+    "table": "food_category",
+    "records": [
+      {
+        "id": 5,
+        "code": 500,
+        "description": "Poultry Products"
+      },
+      {
+        "id": 6,
+        "code": 600,
+        "description": "Soups, Sauces, and Gravies"
+      },
+      {
+        "id": 7,
+        "code": 700,
+        "description": "Sausages and Luncheon Meats"
+      },
+      {
+        "id": 8,
+        "code": 800,
+        "description": "Breakfast Cereals"
+      }
+    ]
+  }
+]

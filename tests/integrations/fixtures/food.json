@@ -3,11 +3,39 @@
     "table": "food",
     "records": [
       {
-        "fdc_id": 1,
-        "data_type": 1,
-        "description": "This is a test",
-        "food_category_id": 1,
-        "publication_date": "2017-01-01"
+        "fdc_id": 346464,
+        "data_type": "branded_food",
+        "description": "WOLF Chili Without Beans",
+        "food_category_id": 0,
+        "publication_date": "2019-04-01"
+      },
+      {
+        "fdc_id": 346470,
+        "data_type": "branded_food",
+        "description": "SANALAC Non Fat Dry Milk, 1 QT",
+        "food_category_id": 0,
+        "publication_date": "2019-04-01"
+      },
+      {
+        "fdc_id": 346519,
+        "data_type": "branded_food",
+        "description": "SWISS MISS Hot Cocoa Mix Dark Chocolate Sensation Envelopes, 10 OZ",
+        "food_category_id": 0,
+        "publication_date": "2019-04-01"
+      },
+      {
+        "fdc_id": 346532,
+        "data_type": "branded_food",
+        "description": "SWISS MISS Creamy Vanilla Pudding, 24 OZ",
+        "food_category_id": 0,
+        "publication_date": "2019-04-01"
+      },
+      {
+        "fdc_id": 346533,
+        "data_type": "branded_food",
+        "description": "SWISS MISS Creamy Milk Chocolate Pudding, 24 OZ\"",
+        "food_category_id": 0,
+        "publication_date": "2019-04-01"
       }
     ]
   }

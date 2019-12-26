@@ -13,6 +13,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 from app import routes
+
 from app.database import (
     FoodAttribute, FoodCategory, FoodComponent, FoodPortion, MeasureUnit,
     Nutrient, FoodNutrient, FoodNutrientConversionFactor,

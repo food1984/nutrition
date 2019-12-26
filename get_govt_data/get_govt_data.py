@@ -5,13 +5,13 @@ from sqlalchemy import create_engine
 import pandas as pd
 from zipfile37 import ZipFile
 import glob
-from database import (FoodCategory, FoodAttribute, FoodComponent,
-                      FoodPortion, FoodNutrient, MeasureUnit, Nutrient,
-                      FoodNutrientConversionFactor, FoodNutrientSource,
-                      FoodNutrientDerivation, BrandedFood, Food,
-                      FoodAttributeType, FoodCalorieConversionFactor,
-                      FoodUpdateLogEntry, FoundationFood,
-                      FoodProteinConversionFactor, WWIEAFoodCategory)
+from app.database import (
+    FoodAttribute, FoodCategory, FoodComponent, FoodPortion, MeasureUnit,
+    Nutrient, FoodNutrient, FoodNutrientConversionFactor,
+    FoodNutrientDerivation, FoodNutrientSource, Food, NutrientIncomingName,
+    FoodUpdateLogEntry, FoodCalorieConversionFactor,
+    FoodProteinConversionFactor, FoodAttributeType, WWIEAFoodCategory
+)
 
 
 def cleanup(dir):
@@ -74,7 +74,7 @@ def convert_boolean(val):
 
 
 def load_data(file_name, engine):
-    table_name, ext = file_name.split('.')[0]
+    table_name, ext = os.path.basename(file_name).split('.')
 
     logging.info('Processing file: {}, table: {}'.format(
         file_name, table_name))
@@ -118,10 +118,10 @@ def main():
 
     DATA_DIR = os.path.join(BASE_DIR, os.getenv('DATA_DIR', 'data'))
 
-#    download_file(URL, DATA_DIR)
+    download_file(URL, DATA_DIR)
 
-    for file in glob.glob(os.path.join(DATA_DIR, '*.csv')):
-        load_data(os.path.basename(file), engine)
+#    for file in glob.glob(os.path.join(DATA_DIR, '*.csv')):
+#        load_data(file, engine)
 
     logging.info('Finished')
 
