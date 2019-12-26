@@ -13,7 +13,8 @@ from app.database import (
 class TestDatabase(unittest.TestCase, FixturesMixin):
     fixtures = [
             'food.json',
-            'food_category.json'
+            'food_category.json',
+            'food_attribute.json'
         ]
 
     app = app
@@ -60,6 +61,26 @@ class TestDatabase(unittest.TestCase, FixturesMixin):
                          "FoodCategory.code doesn't match")
         self.assertEqual(food.description, description,
                          "FoodCategory.description doesn't match")
+
+    def test_food_attribute_all(self):
+        food = db.session.query(FoodAttribute).all()
+        assert len(food) == 4, "Not equal to four food attribute rows"
+
+    def test_food_attribute_id(self):
+        id = 66690
+        fdc_id = 605282
+        food_name = 'Food Category'
+        food_value = "1"
+        food = db.session.query(FoodAttribute).get(id)
+        self.assertEqual(food.id, id, "FoodAttribute.id doesn't match")
+        self.assertEqual(food.fdc_id, fdc_id,
+                         "FoodAttribute.fdc_id doesn't match")
+        self.assertEqual(food.name, food_name,
+                         "FoodAttribute.name doesn't match")
+        self.assertEqual(food.value, food_value,
+                         "FoodAttribute.value doesn't match")
+        self.assertEqual(food.seq_num, None,
+                         "FoodAttribute.seq_num doesn't match")
 
 
 if __name__ == '__main__':
