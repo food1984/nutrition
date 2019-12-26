@@ -4,7 +4,7 @@ omit =
     # omit site-packages directory anywhere
     */site-packages/*
     */Python??/Lib/*
-    find_probes.py
+    */local/lib/python3.7/*
 include = *.py
 
 [report]
