@@ -12,8 +12,8 @@ from app.database import (
 
 class TestDatabase(unittest.TestCase, FixturesMixin):
     fixtures = [
-            'fixtures/food.json',
-            'fixtures/food_category.json'
+            'food.json',
+            'food_category.json'
         ]
 
     app = app

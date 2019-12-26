@@ -19,6 +19,7 @@ _mailinglist
 .idea/
 docs/_build/
 app.db
+test_app.db
 
 # Coverage reports
 htmlcov/
