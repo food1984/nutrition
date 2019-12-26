@@ -40,6 +40,8 @@ jobs:
 
       - run:
           name: run tests
+          environment:
+            CONFIG_SETTINGS: config.TestConfig
           command: |
             . venv/bin/activate
             pip install -r test_requirements.txt
