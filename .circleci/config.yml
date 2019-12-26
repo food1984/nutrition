@@ -45,11 +45,10 @@ jobs:
           command: |
             . venv/bin/activate
             pip install -r test_requirements.txt
-            coverage run -m pytest --junitxml=test-results/test-results.xml --cov=. --cov-report=xml:test-results/coverage.xml
+            coverage run -m pytest --junitxml=test-results/test-results.xml
             coverage report
             coverage xml -o test-results/coverage.xml
             coverage html --omit=/usr/local/lib*
-            coveralls
 
       - store_test_results:
           path: test-results
@@ -58,7 +57,7 @@ jobs:
           path: artifacts
 
       - codecov/upload:
-          file: coveralls
+          file: test-results
 
 workflows:
   version: 2
