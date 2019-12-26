@@ -1,3 +1,5 @@
+flask
+flask-migrate
 urllib3
 sqlalchemy
 pandas
