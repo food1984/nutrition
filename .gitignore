@@ -27,3 +27,7 @@ htmlcov/
 .coverage.*
 *,cover
 test-results/
+
+# VsCode
+.vscode/
+~/virtualenvs
