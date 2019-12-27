@@ -1,6 +1,9 @@
 flask
 flask-migrate
+flask-graphql
 urllib3
 sqlalchemy
 pandas
 zipfile37
+graphene
+graphene-sqlalchemy
