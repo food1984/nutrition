@@ -50,6 +50,8 @@ jobs:
             coverage report
             coverage xml -o test-results/coverage.xml
             coverage html --omit=/usr/local/lib*
+            python-codacy-coverage -r tests-results/coverage.xml
+
 
       - store_test_results:
           path: test-results
