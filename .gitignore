@@ -28,3 +28,7 @@ htmlcov/
 *,cover
 test-results/
 test-reports/
+
+# VsCode
+.vscode/
+~/virtualenvs
