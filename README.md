@@ -1,7 +1,7 @@
 # nutrition
 
 [![CircleCI](https://circleci.com/gh/erikdeirdre/nutrition.svg?style=svg)](https://circleci.com/gh/erikdeirdre/nutrition)
-[![Coverage Status](https://coveralls.io/repos/github/erikdeirdre/nutrition/badge.svg?branch=)](https://coveralls.io/github/erikdeirdre/nutrition?branch=)
+[![Coverage Status](https://coveralls.io/repos/github/erikdeirdre/nutrition/badge.svg?branch=master)](https://coveralls.io/github/erikdeirdre/nutrition?branch=master)
 [![codecov](https://codecov.io/gh/erikdeirdre/nutrition/branch/master/graph/badge.svg)](https://codecov.io/gh/erikdeirdre/nutrition)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/14a718773e304ddeadab8c55d48ea9a0)](https://www.codacy.com/manual/erikdeirdre/nutrition?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=erikdeirdre/nutrition&amp;utm_campaign=Badge_Grade)
 
