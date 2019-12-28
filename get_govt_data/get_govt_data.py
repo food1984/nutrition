@@ -1,11 +1,10 @@
 import os
 import urllib3
 import logging
-from sqlalchemy import create_engine
 import pandas as pd
 from zipfile37 import ZipFile
 import glob
-from app import (app, db)
+from app import db
 
 from app.database import (
     FoodAttribute, FoodCategory, FoodComponent, FoodPortion, MeasureUnit,
@@ -16,31 +15,31 @@ from app.database import (
 )
 
 
-def cleanup(dir):
-    logging.info('Cleaning up, directory: {}'.format(dir))
+def cleanup(tmp_dir):
+    logging.info('Cleaning up, directory: {}'.format(tmp_dir))
 
     try:
-        os.mkdir(dir)
-        logging.debug('Creating Directory, {}'.format(dir))
-    except FileExistsError as F:
-        logging.debug('Directory, {}, already exists'.format(dir))
+        os.mkdir(tmp_dir)
+        logging.debug('Creating Directory, {}'.format(tmp_dir))
+    except FileExistsError:
+        logging.debug('Directory, {}, already exists'.format(tmp_dir))
 
     try:
-        map(os.unlink, glob.glob(os.path.join(dir, "*")))
-    except FileNotFoundError as F:
-        logging.info('Directory, {}, not found ... creating'.format(dir))
-        os.mkdir(dir)
-    logging.info('Successfully cleaned, {}'.format(dir))
+        map(os.unlink, glob.glob(os.path.join(tmp_dir, "*")))
+    except FileNotFoundError:
+        logging.info('Directory, {}, not found ... creating'.format(tmp_dir))
+        os.mkdir(tmp_dir)
+    logging.info('Successfully cleaned, {}'.format(tmp_dir))
 
 
-def download_file(url, dir):
-    cleanup(dir)
+def download_file(url, tmp_dir):
+    cleanup(tmp_dir)
 
     file_name = url.split('/')[-1]
     http = urllib3.PoolManager()
     r = http.request('GET', url, preload_content=False, )
 
-    f = open(os.path.join(dir, file_name), 'wb')
+    f = open(os.path.join(tmp_dir, file_name), 'wb')
     meta = r.info()
     file_size = int(meta.getheaders("Content-Length")[0])
     logging.info("Downloading: %s Bytes: %s" % (file_name, file_size))
@@ -49,7 +48,7 @@ def download_file(url, dir):
 
     chunk_size = 8192
 
-    with open(os.path.join(dir, file_name), 'wb') as out:
+    with open(os.path.join(tmp_dir, file_name), 'wb') as out:
         while True:
             data = r.read(chunk_size)
             file_size_dl += chunk_size
@@ -62,8 +61,8 @@ def download_file(url, dir):
     f.close()
 
     logging.info('Unzipping ... {}'.format(file_name))
-    with ZipFile(os.path.join(dir, file_name), 'r') as zip:
-        zip.extractall(dir)
+    with ZipFile(os.path.join(tmp_dir, file_name), 'r') as zip:
+        zip.extractall(tmp_dir)
 
     r.release_conn()
 

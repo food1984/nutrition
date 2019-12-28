@@ -19,3 +19,7 @@ class TestConfig(Config):
         'sqlite:///' + os.path.join(basedir, 'test_app.db'))
     TESTING = True
     FIXTURES_DIRS = ['../tests/integrations/fixtures']
+
+
+class ProductionConfig(Config):
+    pass
