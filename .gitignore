@@ -27,3 +27,4 @@ htmlcov/
 .coverage.*
 *,cover
 test-results/
+test-reports/

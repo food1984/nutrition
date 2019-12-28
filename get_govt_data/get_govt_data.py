@@ -5,6 +5,8 @@ from sqlalchemy import create_engine
 import pandas as pd
 from zipfile37 import ZipFile
 import glob
+from app import (app, db)
+
 from app.database import (
     FoodAttribute, FoodCategory, FoodComponent, FoodPortion, MeasureUnit,
     Nutrient, FoodNutrient, FoodNutrientConversionFactor,
@@ -105,13 +107,6 @@ def main():
 
     BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
-    SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI',
-                                        'sqlite:///' + os.path.join(BASE_DIR,
-                                                                    '..',
-                                                                    'app.db'))
-
-    engine = create_engine(SQLALCHEMY_DATABASE_URI)
-
     URL = os.getenv('GOVT_DATA_URL',
                     'https://fdc.nal.usda.gov/fdc-datasets/'
                     'FoodData_Central_csv_2019-12-17.zip')
@@ -120,8 +115,8 @@ def main():
 
     download_file(URL, DATA_DIR)
 
-#    for file in glob.glob(os.path.join(DATA_DIR, '*.csv')):
-#        load_data(file, engine)
+    for file in glob.glob(os.path.join(DATA_DIR, '*.csv')):
+        load_data(file, db.engine)
 
     logging.info('Finished')
 
