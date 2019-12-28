@@ -2,6 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/erikdeirdre/nutrition.svg?style=svg)](https://circleci.com/gh/erikdeirdre/nutrition)
 [![Coverage Status](https://coveralls.io/repos/github/erikdeirdre/nutrition/badge.svg?branch=)](https://coveralls.io/github/erikdeirdre/nutrition?branch=)
+[![codecov](https://codecov.io/gh/erikdeirdre/nutrition/branch/master/graph/badge.svg)](https://codecov.io/gh/erikdeirdre/nutrition)
 
 This is my attempt at learning more `Flask` and `Angular` by creating a recipe system which includes nutrition ability. 
 
