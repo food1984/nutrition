@@ -61,8 +61,8 @@ def download_file(url, tmp_dir):
     f.close()
 
     logging.info('Unzipping ... {}'.format(file_name))
-    with ZipFile(os.path.join(tmp_dir, file_name), 'r') as zip:
-        zip.extractall(tmp_dir)
+    with ZipFile(os.path.join(tmp_dir, file_name), 'r') as z:
+        z.extractall(tmp_dir)
 
     r.release_conn()
 
