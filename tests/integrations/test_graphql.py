@@ -1,6 +1,9 @@
+import sys
+from os.path import (join, abspath, dirname)
 import unittest
 from graphene.test import Client
 from flask_fixtures import FixturesMixin
+from testclass.testclass import TestClass
 from app import (app, db)
 from app.schema import schema
 
@@ -14,6 +17,7 @@ class TestSchema(unittest.TestCase, FixturesMixin):
 
     app = app
     db = db
+    dir_name = join(abspath(dirname(__file__)), 'files')
 
     @classmethod
     def setup_class(cls):
@@ -25,81 +29,14 @@ class TestSchema(unittest.TestCase, FixturesMixin):
 #        db.drop_all()
 
     def test_food_query(self):
+        test_data = TestClass(self.dir_name,
+                              sys._getframe(  ).f_code.co_name)
+        test_data.load_files()
+
         client = Client(schema)
-        query = """{
-  allFood {
-    edges {
-      node {
-        description
-        id
-        fdcId
-        dataType
-        foodCategoryId
-        publicationDate
-      }
-    }
-  }
-}"""
-        expected_result = {
-  "data": {
-    "allFood": {
-      "edges": [
-        {
-          "node": {
-            "description": "WOLF Chili Without Beans",
-            "id": "Rm9vZDozNDY0NjQ=",
-            "fdcId": "346464",
-            "dataType": "branded_food",
-            "foodCategoryId": 0,
-            "publicationDate": "2019-04-01 00:00:00"
-          }
-        },
-        {
-          "node": {
-            "description": "SANALAC Non Fat Dry Milk, 1 QT",
-            "id": "Rm9vZDozNDY0NzA=",
-            "fdcId": "346470",
-            "dataType": "branded_food",
-            "foodCategoryId": 0,
-            "publicationDate": "2019-04-01 00:00:00"
-          }
-        },
-        {
-          "node": {
-            "description": "SWISS MISS Hot Cocoa Mix Dark Chocolate Sensation Envelopes, 10 OZ",
-            "id": "Rm9vZDozNDY1MTk=",
-            "fdcId": "346519",
-            "dataType": "branded_food",
-            "foodCategoryId": 0,
-            "publicationDate": "2019-04-01 00:00:00"
-          }
-        },
-        {
-          "node": {
-            "description": "SWISS MISS Creamy Vanilla Pudding, 24 OZ",
-            "id": "Rm9vZDozNDY1MzI=",
-            "fdcId": "346532",
-            "dataType": "branded_food",
-            "foodCategoryId": 0,
-            "publicationDate": "2019-04-01 00:00:00"
-          }
-        },
-        {
-          "node": {
-            "description": "SWISS MISS Creamy Milk Chocolate Pudding, 24 OZ\"",
-            "id": "Rm9vZDozNDY1MzM=",
-            "fdcId": "346533",
-            "dataType": "branded_food",
-            "foodCategoryId": 0,
-            "publicationDate": "2019-04-01 00:00:00"
-          }
-        }
-      ]
-    }
-  }
-}
-        executed = client.execute(query)
-        self.assertEqual(executed, dict(expected_result))
+
+        executed = client.execute(test_data.get_send_request())
+        self.assertEqual(executed, test_data.get_expected_result())
 
 
 if __name__ == '__main__':

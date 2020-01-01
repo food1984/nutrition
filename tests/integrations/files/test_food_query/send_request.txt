@@ -1,0 +1,14 @@
+{
+  allFood {
+    edges {
+      node {
+        description
+        id
+        fdcId
+        dataType
+        foodCategoryId
+        publicationDate
+      }
+    }
+  }
+}
