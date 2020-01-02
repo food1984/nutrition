@@ -1,0 +1,10 @@
+{
+  allFoodCategory {
+    edges {
+      node {
+        description
+        code
+      }
+    }
+  }
+}

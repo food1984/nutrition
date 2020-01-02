@@ -10,9 +10,11 @@ from app.schema import schema
 
 class TestSchema(unittest.TestCase, FixturesMixin):
     fixtures = [
+            'branded_food.json',
             'food.json',
             'food_category.json',
-            'food_attribute.json'
+            'food_attribute.json',
+            'food_attribute_type.json'
         ]
 
     app = app
@@ -29,6 +31,36 @@ class TestSchema(unittest.TestCase, FixturesMixin):
 #        db.drop_all()
 
     def test_food_query(self):
+        test_data = TestClass(self.dir_name,
+                              sys._getframe(  ).f_code.co_name)
+        test_data.load_files()
+
+        client = Client(schema)
+
+        executed = client.execute(test_data.get_send_request())
+        self.assertEqual(executed, test_data.get_expected_result())
+
+    def test_food_attribute_query(self):
+        test_data = TestClass(self.dir_name,
+                              sys._getframe(  ).f_code.co_name)
+        test_data.load_files()
+
+        client = Client(schema)
+
+        executed = client.execute(test_data.get_send_request())
+        self.assertEqual(executed, test_data.get_expected_result())
+
+    def test_food_category_query(self):
+        test_data = TestClass(self.dir_name,
+                              sys._getframe(  ).f_code.co_name)
+        test_data.load_files()
+
+        client = Client(schema)
+
+        executed = client.execute(test_data.get_send_request())
+        self.assertEqual(executed, test_data.get_expected_result())
+
+    def test_branded_food_query(self):
         test_data = TestClass(self.dir_name,
                               sys._getframe(  ).f_code.co_name)
         test_data.load_files()

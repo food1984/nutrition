@@ -12,9 +12,11 @@ from app.database import (
 
 class TestDatabase(unittest.TestCase, FixturesMixin):
     fixtures = [
+            'branded_food.json',
             'food.json',
             'food_category.json',
-            'food_attribute.json'
+            'food_attribute.json',
+            'food_attribute_type.json'
         ]
 
     app = app

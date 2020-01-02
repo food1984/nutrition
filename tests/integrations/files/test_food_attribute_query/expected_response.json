@@ -1,0 +1,32 @@
+{
+  "data": {
+    "allFoodAttribute": {
+      "edges": [
+        {
+          "node": {
+            "fdcId": 605280,
+            "foodAttributeTypeId": 998
+          }
+        },
+        {
+          "node": {
+            "fdcId": 605282,
+            "foodAttributeTypeId": 998
+          }
+        },
+        {
+          "node": {
+            "fdcId": 605764,
+            "foodAttributeTypeId": 998
+          }
+        },
+        {
+          "node": {
+            "fdcId": 605766,
+            "foodAttributeTypeId": 998
+          }
+        }
+      ]
+    }
+  }
+}

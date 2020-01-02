@@ -1,0 +1,10 @@
+{
+  allFoodAttribute {
+    edges {
+      node {
+        fdcId
+        foodAttributeTypeId
+      }
+    }
+  }
+}

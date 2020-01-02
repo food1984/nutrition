@@ -1,0 +1,33 @@
+{
+  "data": {
+    "allFoodCategory": {
+      "edges": [
+        {
+          "node": {
+            "id": "Rm9vZENhdGVnb3J5OjU=",
+            "description": "Poultry Products",
+            "code": 500
+          }
+        },
+        {
+          "node": {
+            "description": "Soups, Sauces, and Gravies",
+            "code": 600
+          }
+        },
+        {
+          "node": {
+            "description": "Sausages and Luncheon Meats",
+            "code": 700
+          }
+        },
+        {
+          "node": {
+            "description": "Breakfast Cereals",
+            "code": 800
+          }
+        }
+      ]
+    }
+  }
+}
