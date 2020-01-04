@@ -1,0 +1,44 @@
+{
+  "data": {
+    "allBrandedFood": {
+      "edges": [
+        {
+          "node": {
+            "dataSource": "GDSN",
+            "brandedFoodCategory": null,
+            "fdcId": 346464,
+            "brandOwner": "Conagra Brands",
+            "ingredients": "Meat Ingredients (Beef and Pork), Water, Tomato Puree (Water, Tomato Paste), Beef Broth, Whole Rolled Oats, Chili Pepper, Contains less than 2% of: Salt, Sugar, Spices, Garlic Powder, Soy Lecithin, Caramel Color, Sodium Phosphate. CONTAINS: SOY.",
+            "gtinUpc": "00014900012704",
+            "availableDate": "2018-11-17",
+            "modifiedDate": "2018-11-17"
+          }
+        },
+        {
+          "node": {
+            "dataSource": "GDSN",
+            "brandedFoodCategory": null,
+            "fdcId": 346049,
+            "brandOwner": "Conagra Brands",
+            "ingredients": "Cooked Beef, Beef, Onions, Salt, Onion Powder, Sugar, Sodium Nitrite.",
+            "gtinUpc": "00014900550107",
+            "availableDate": "2018-11-17",
+            "modifiedDate": "2018-11-17"
+          }
+        },
+        {
+          "node": {
+            "dataSource": "GDSN",
+            "brandedFoodCategory": null,
+            "fdcId": 346050,
+            "brandOwner": "Conagra Brands",
+            "ingredients": "Cooked Beef, Beef, Salt, Water, Chili Powder, Sugar, Tomato Extract, Spices, Garlic Paste, Sodium Nitrite.",
+            "gtinUpc": "00014900550114",
+            "availableDate": "2018-11-17",
+            "modifiedDate": "2018-11-17"
+          }
+        }
+      ]
+    }
+  }
+}

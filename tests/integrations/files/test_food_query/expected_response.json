@@ -4,7 +4,6 @@
  			"edges": [{
  					"node": {
  						"description": "WOLF Chili Without Beans",
- 						"id": "Rm9vZDozNDY0NjQ=",
  						"fdcId": "346464",
  						"dataType": "branded_food",
  						"foodCategoryId": 0,
@@ -14,7 +13,6 @@
  				{
  					"node": {
  						"description": "SANALAC Non Fat Dry Milk, 1 QT",
- 						"id": "Rm9vZDozNDY0NzA=",
  						"fdcId": "346470",
  						"dataType": "branded_food",
  						"foodCategoryId": 0,
@@ -24,7 +22,6 @@
  				{
  					"node": {
  						"description": "SWISS MISS Hot Cocoa Mix Dark Chocolate Sensation Envelopes, 10 OZ",
- 						"id": "Rm9vZDozNDY1MTk=",
  						"fdcId": "346519",
  						"dataType": "branded_food",
  						"foodCategoryId": 0,
@@ -34,7 +31,6 @@
  				{
  					"node": {
  						"description": "SWISS MISS Creamy Vanilla Pudding, 24 OZ",
- 						"id": "Rm9vZDozNDY1MzI=",
  						"fdcId": "346532",
  						"dataType": "branded_food",
  						"foodCategoryId": 0,
@@ -44,7 +40,6 @@
  				{
  					"node": {
  						"description": "SWISS MISS Creamy Milk Chocolate Pudding, 24 OZ\"",
- 						"id": "Rm9vZDozNDY1MzM=",
  						"fdcId": "346533",
  						"dataType": "branded_food",
  						"foodCategoryId": 0,

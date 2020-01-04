@@ -1,5 +1,7 @@
 import sys
 from os.path import (join, abspath, dirname)
+from collections import OrderedDict
+from json import loads, dumps
 import unittest
 from graphene.test import Client
 from flask_fixtures import FixturesMixin
@@ -38,7 +40,8 @@ class TestSchema(unittest.TestCase, FixturesMixin):
         client = Client(schema)
 
         executed = client.execute(test_data.get_send_request())
-        self.assertEqual(executed, test_data.get_expected_result())
+        self.assertEqual(loads(dumps(executed['data'])),
+                         test_data.get_expected_result()['data'])
 
     def test_food_attribute_query(self):
         test_data = TestClass(self.dir_name,
@@ -48,7 +51,8 @@ class TestSchema(unittest.TestCase, FixturesMixin):
         client = Client(schema)
 
         executed = client.execute(test_data.get_send_request())
-        self.assertEqual(executed, test_data.get_expected_result())
+        self.assertEqual(loads(dumps(executed['data'])),
+                         test_data.get_expected_result()['data'])
 
     def test_food_category_query(self):
         test_data = TestClass(self.dir_name,
@@ -58,7 +62,8 @@ class TestSchema(unittest.TestCase, FixturesMixin):
         client = Client(schema)
 
         executed = client.execute(test_data.get_send_request())
-        self.assertEqual(executed, test_data.get_expected_result())
+        self.assertEqual(loads(dumps(executed['data'])),
+                         test_data.get_expected_result()['data'])
 
     def test_branded_food_query(self):
         test_data = TestClass(self.dir_name,
@@ -68,7 +73,8 @@ class TestSchema(unittest.TestCase, FixturesMixin):
         client = Client(schema)
 
         executed = client.execute(test_data.get_send_request())
-        self.assertEqual(executed, test_data.get_expected_result())
+        self.assertEqual(loads(dumps(executed['data'])),
+                         test_data.get_expected_result()['data'])
 
 
 if __name__ == '__main__':

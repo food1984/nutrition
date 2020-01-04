@@ -1,38 +1,45 @@
 [
   {
-    "table": "food_attribute",
+    "table": "branded_food",
     "records": [
       {
-        "id": 66688,
-        "fdc_id": 605280,
-        "seq_num": null,
-        "food_attribute_type_id": 998,
-        "name": "Food Category",
-        "value": 1
+        "fdc_id": 346049,
+        "brand_owner": "Conagra Brands",
+        "gtin_upc": "00014900550107",
+        "ingredients": "Cooked Beef, Beef, Onions, Salt, Onion Powder, Sugar, Sodium Nitrite.",
+        "serving_size": 56,
+        "serving_size_unit": "g",
+        "household_serving_fulltext": "2 oz (56g)",
+        "branded_food_category": null,
+        "data_source": "GDSN",
+        "modified_date": "2018-11-17",
+        "available_date": "2018-11-17"
       },
       {
-        "id": 66690,
-        "fdc_id": 605282,
-        "seq_num": null,
-        "food_attribute_type_id": 998,
-        "name": "Food Category",
-        "value": 1
+        "fdc_id": 346050,
+        "brand_owner": "Conagra Brands",
+        "gtin_upc": "00014900550114",
+        "ingredients": "Cooked Beef, Beef, Salt, Water, Chili Powder, Sugar, Tomato Extract, Spices, Garlic Paste, Sodium Nitrite.",
+        "serving_size": 56,
+        "serving_size_unit": "g",
+        "household_serving_fulltext": "2 oz (56g)",
+        "branded_food_category": null,
+        "data_source": "GDSN",
+        "modified_date": "2018-11-17",
+        "available_date": "2018-11-17"
       },
       {
-        "id": 67256,
-        "fdc_id": 605764,
-        "seq_num": null,
-        "food_attribute_type_id": 998,
-        "name": "Food Category",
-        "value": 1
-      },
-      {
-        "id":67258,
-        "fdc_id": 605766,
-        "seq_num": null,
-        "food_attribute_type_id": 998,
-        "name": "Food Category",
-        "value": 1
+        "fdc_id": 346464,
+        "brand_owner": "Conagra Brands",
+        "gtin_upc": "00014900012704",
+        "ingredients": "Meat Ingredients (Beef and Pork), Water, Tomato Puree (Water, Tomato Paste), Beef Broth, Whole Rolled Oats, Chili Pepper, Contains less than 2% of: Salt, Sugar, Spices, Garlic Powder, Soy Lecithin, Caramel Color, Sodium Phosphate. CONTAINS: SOY.",
+        "serving_size": 248,
+        "serving_size_unit": "g",
+        "household_serving_fulltext": "1 cup (248g)",
+        "branded_food_category": null,
+        "data_source": "GDSN",
+        "modified_date": "2018-11-17",
+        "available_date": "2018-11-17"
       }
     ]
   }

@@ -3,36 +3,44 @@
     "table": "food_attribute",
     "records": [
       {
-        "id": 66688,
-        "fdc_id": 605280,
-        "seq_num": null,
-        "food_attribute_type_id": 998,
-        "name": "Food Category",
-        "value": 1
+        "id": 5578,
+        "fdc_id": 323121,
+        "seq_num": 0,
+        "food_attribute_type_id": 1000,
+        "name": null,
+        "value": "hot dog, frank, wiener"
       },
       {
-        "id": 66690,
-        "fdc_id": 605282,
-        "seq_num": null,
-        "food_attribute_type_id": 998,
-        "name": "Food Category",
-        "value": 1
+        "id": 5579,
+        "fdc_id": 327046,
+        "seq_num": 0,
+        "food_attribute_type_id": 1000,
+        "name": null,
+        "value": "Chinese gooseberry"
       },
       {
-        "id": 67256,
-        "fdc_id": 605764,
-        "seq_num": null,
-        "food_attribute_type_id": 998,
-        "name": "Food Category",
-        "value": 1
+        "id": 5580,
+        "fdc_id": 334276,
+        "seq_num": 0,
+        "food_attribute_type_id": 1000,
+        "name": null,
+        "value": "Pollock"
       },
       {
-        "id":67258,
-        "fdc_id": 605766,
-        "seq_num": null,
-        "food_attribute_type_id": 998,
-        "name": "Food Category",
-        "value": 1
+        "id":5581,
+        "fdc_id": 334247,
+        "seq_num": 0,
+        "food_attribute_type_id": 1000,
+        "name": null,
+        "value": "Sucrose"
+      },
+      {
+        "id":5582,
+        "fdc_id": 334849,
+        "seq_num": 0,
+        "food_attribute_type_id": 1000,
+        "name": null,
+        "value": "URMIS # 2219, Kansas City Strip, Boneless Strip Steak, Club Steak, New York Strip"
       }
     ]
   }

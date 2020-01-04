@@ -1,0 +1,16 @@
+{
+  allBrandedFood {
+    edges {
+      node {
+        dataSource
+        brandedFoodCategory
+        fdcId
+        brandOwner
+        ingredients
+        gtinUpc
+        availableDate
+        modifiedDate
+      }
+    }
+  }
+}

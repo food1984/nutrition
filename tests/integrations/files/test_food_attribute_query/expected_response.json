@@ -4,26 +4,32 @@
       "edges": [
         {
           "node": {
-            "fdcId": 605280,
-            "foodAttributeTypeId": 998
+            "fdcId": 323121,
+            "foodAttributeTypeId": 1000
           }
         },
         {
           "node": {
-            "fdcId": 605282,
-            "foodAttributeTypeId": 998
+            "fdcId": 327046,
+            "foodAttributeTypeId": 1000
           }
         },
         {
           "node": {
-            "fdcId": 605764,
-            "foodAttributeTypeId": 998
+            "fdcId": 334276,
+            "foodAttributeTypeId": 1000
           }
         },
         {
           "node": {
-            "fdcId": 605766,
-            "foodAttributeTypeId": 998
+            "fdcId": 334247,
+            "foodAttributeTypeId": 1000
+          }
+        },
+        {
+          "node": {
+            "fdcId": 334849,
+            "foodAttributeTypeId": 1000
           }
         }
       ]
