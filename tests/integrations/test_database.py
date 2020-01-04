@@ -66,23 +66,25 @@ class TestDatabase(unittest.TestCase, FixturesMixin):
 
     def test_food_attribute_all(self):
         food = db.session.query(FoodAttribute).all()
-        self.assertEqual(len(food), 4, "Not equal to four food attribute rows")
+        self.assertEqual(len(food), 5, "Not equal to four food attribute rows")
 
     def test_food_attribute_id(self):
-        test_id = 66690
-        fdc_id = 605282
-        food_name = 'Food Category'
-        food_value = "1"
+        test_id = 5578
+        fdc_id = 323121
+        attribute_type_id = 1000
+        food_value = "hot dog, frank, wiener"
         food = db.session.query(FoodAttribute).get(test_id)
         self.assertEqual(food.id, test_id, "FoodAttribute.id doesn't match")
         self.assertEqual(food.fdc_id, fdc_id,
                          "FoodAttribute.fdc_id doesn't match")
-        self.assertEqual(food.name, food_name,
+        self.assertEqual(food.name, None,
                          "FoodAttribute.name doesn't match")
         self.assertEqual(food.value, food_value,
                          "FoodAttribute.value doesn't match")
-        self.assertEqual(food.seq_num, None,
+        self.assertEqual(food.seq_num, 0,
                          "FoodAttribute.seq_num doesn't match")
+        self.assertEqual(food.food_attribute_type_id, attribute_type_id,
+                         "FoodAttribute.attribute_type doesn't match")
 
 
 if __name__ == '__main__':
