@@ -1,6 +1,5 @@
 import sys
 from os.path import (join, abspath, dirname)
-from collections import OrderedDict
 from json import loads, dumps
 import unittest
 from graphene.test import Client
@@ -10,11 +9,37 @@ from app import (app, db)
 from app.schema import schema
 
 
+""""
+@pytest.fixture(scope='module')
+def init_database():
+    fixtures = [
+            'branded_food.json',
+            'food.json',
+            'food_calorie_conversion_factor.json',
+            'food_category.json',
+            'food_component.json',
+            'food_attribute.json',
+            'food_attribute_type.json'
+        ]
+
+    dir_name = join(abspath(dirname(__file__)), 'files')
+
+    db.drop_all()
+    db.create_all()
+
+    yield db  # this is where the testing happens!
+
+    db.drop_all()
+"""
+
+
 class TestSchema(unittest.TestCase, FixturesMixin):
     fixtures = [
             'branded_food.json',
             'food.json',
+            'food_calorie_conversion_factor.json',
             'food_category.json',
+            'food_component.json',
             'food_attribute.json',
             'food_attribute_type.json'
         ]
@@ -22,6 +47,7 @@ class TestSchema(unittest.TestCase, FixturesMixin):
     app = app
     db = db
     dir_name = join(abspath(dirname(__file__)), 'files')
+    client = Client(schema)
 
     @classmethod
     def setup_class(cls):
@@ -37,9 +63,7 @@ class TestSchema(unittest.TestCase, FixturesMixin):
                               sys._getframe(  ).f_code.co_name)
         test_data.load_files()
 
-        client = Client(schema)
-
-        executed = client.execute(test_data.get_send_request())
+        executed = self.client.execute(test_data.get_send_request())
         self.assertEqual(loads(dumps(executed['data'])),
                          test_data.get_expected_result()['data'])
 
@@ -48,9 +72,7 @@ class TestSchema(unittest.TestCase, FixturesMixin):
                               sys._getframe(  ).f_code.co_name)
         test_data.load_files()
 
-        client = Client(schema)
-
-        executed = client.execute(test_data.get_send_request())
+        executed = self.client.execute(test_data.get_send_request())
         self.assertEqual(loads(dumps(executed['data'])),
                          test_data.get_expected_result()['data'])
 
@@ -59,9 +81,7 @@ class TestSchema(unittest.TestCase, FixturesMixin):
                               sys._getframe(  ).f_code.co_name)
         test_data.load_files()
 
-        client = Client(schema)
-
-        executed = client.execute(test_data.get_send_request())
+        executed = self.client.execute(test_data.get_send_request())
         self.assertEqual(loads(dumps(executed['data'])),
                          test_data.get_expected_result()['data'])
 
@@ -70,9 +90,7 @@ class TestSchema(unittest.TestCase, FixturesMixin):
                               sys._getframe(  ).f_code.co_name)
         test_data.load_files()
 
-        client = Client(schema)
-
-        executed = client.execute(test_data.get_send_request())
+        executed = self.client.execute(test_data.get_send_request())
         self.assertEqual(loads(dumps(executed['data'])),
                          test_data.get_expected_result()['data'])
 

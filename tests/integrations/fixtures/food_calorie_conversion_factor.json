@@ -1,0 +1,31 @@
+[
+  {
+    "table": "food_calorie_conversion_factor",
+    "records": [
+      {
+        "food_nutrient_conversion_factor_id": 22503,
+        "protein_value": 3.47,
+        "fat_value": 8.37,
+        "carbohydrate_value": 4.07
+      },
+      {
+        "food_nutrient_conversion_factor_id": 22505,
+        "protein_value": 4.27,
+        "fat_value": 8.79,
+        "carbohydrate_value": 3.87
+      },
+      {
+        "food_nutrient_conversion_factor_id": 22507,
+        "protein_value": 2.44,
+        "fat_value": 8.37,
+        "carbohydrate_value": 3.57
+      },
+      {
+        "food_nutrient_conversion_factor_id": 22510,
+        "protein_value": 2.44,
+        "fat_value": 8.37,
+        "carbohydrate_value": 3.57
+      }
+    ]
+  }
+]

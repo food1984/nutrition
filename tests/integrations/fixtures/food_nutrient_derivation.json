@@ -1,0 +1,49 @@
+[
+  {
+    "table": "food_nutrient_derivation",
+    "records": [
+      {
+        "id": 1,
+        "code": "A",
+        "description": "Analytical",
+        "nutrient_id": null
+      },
+      {
+        "id": 2,
+        "code": "AI",
+        "description": "Analytical data; from the literature or  government;  incomplete documentation",
+        "nutrient_id": 10
+      },
+      {
+        "id": 3,
+        "code": "AR",
+        "description": "Analytical data; derived by linear regression",
+        "nutrient_id": 1
+      },
+      {
+        "id": 4,
+        "code": "AS",
+        "description": "Summed",
+        "nutrient_id": 1
+      },
+      {
+        "id": 5,
+        "code": "BD",
+        "description": "Based on same food; Drained solids from solids and liquids or vice versa (canned fruits and vegetables)",
+        "nutrient_id": 2
+      },
+      {
+        "id": 6,
+        "code": "BFAN",
+        "description": "Based on another form of the food or similar food; Concentration adjustment; Ash; Retention factors not used",
+        "nutrient_id": 2
+      },
+      {
+        "id": 8,
+        "code": "BFCN",
+        "description": "Based on another form of the food or similar food; Concentration adjustment; Carbohydrate; Retention factors not used",
+        "nutrient_id": 2
+      }
+    ]
+  }
+]

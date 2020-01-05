@@ -13,10 +13,14 @@ from app.database import (
 class TestDatabase(unittest.TestCase, FixturesMixin):
     fixtures = [
             'branded_food.json',
+            'food_calorie_conversion_factor.json',
             'food.json',
             'food_category.json',
+            'food_component.json',
+            'food_nutrient.json',
             'food_attribute.json',
-            'food_attribute_type.json'
+            'food_attribute_type.json',
+            'food_nutrient_derivation.json'
         ]
 
     app = app
@@ -49,6 +53,14 @@ class TestDatabase(unittest.TestCase, FixturesMixin):
         self.assertEqual(food.publication_date, publication_date,
                          "Food.publication date doesn't match")
 
+    def test_food_calorie_conversion_factor_all(self):
+        food = db.session.query(FoodCalorieConversionFactor).all()
+        self.assertEqual(len(food), 4)
+
+    def test_food_component_all(self):
+        food = db.session.query(FoodComponent).all()
+        self.assertEqual(len(food), 5)
+
     def test_food_category_all(self):
         food = db.session.query(FoodCategory).all()
         self.assertEqual(len(food), 4, "Not equal to four food category rows")
@@ -66,7 +78,15 @@ class TestDatabase(unittest.TestCase, FixturesMixin):
 
     def test_food_attribute_all(self):
         food = db.session.query(FoodAttribute).all()
-        self.assertEqual(len(food), 5, "Not equal to four food attribute rows")
+        self.assertEqual(len(food), 5)
+
+    def test_food_nutrient_all(self):
+        food = db.session.query(FoodNutrient).all()
+        self.assertEqual(len(food), 4)
+
+    def test_food_nutrient_derivation_all(self):
+        food = db.session.query(FoodNutrientDerivation).all()
+        self.assertEqual(len(food), 7)
 
     def test_food_attribute_id(self):
         test_id = 5578

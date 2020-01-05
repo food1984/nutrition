@@ -1,0 +1,59 @@
+[
+  {
+    "table": "food_nutrient",
+    "records": [
+      {
+        "id": 4178832,
+        "fdc_id": 346049,
+        "nutrient_id": 1079,
+        "amount": 0.0,
+        "data_points": 75,
+        "derivation_id": null,
+        "min": null,
+        "max": null,
+        "median": null,
+        "footnote": null,
+        "min_year_acquired": null
+      },
+      {
+        "id": 4178833,
+        "fdc_id": 346049,
+        "nutrient_id": 1087,
+        "amount": 0.0,
+        "data_points": 75,
+        "derivation_id": null,
+        "min": null,
+        "max": null,
+        "median": null,
+        "footnote": null,
+        "min_year_acquired": null
+      },
+      {
+        "id": 4178834,
+        "fdc_id": 346049,
+        "nutrient_id": 1089,
+        "amount": 2.57,
+        "data_points": 75,
+        "derivation_id": null,
+        "min": null,
+        "max": null,
+        "median": null,
+        "footnote": null,
+        "min_year_acquired": null
+      },
+      {
+        "id": 4178835,
+        "fdc_id": 346049,
+        "nutrient_id": 1104,
+        "amount": 0.0,
+        "data_points": 75,
+        "derivation_id": null,
+        "min": null,
+        "max": null,
+        "median": null,
+        "footnote": null,
+        "min_year_acquired": null
+      }
+    ]
+  }
+]

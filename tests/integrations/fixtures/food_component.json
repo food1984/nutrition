@@ -1,0 +1,57 @@
+[
+  {
+    "table": "food_component",
+    "records": [
+      {
+        "id": 59105,
+        "fdc_id": 331897,
+        "name": "Bone and cartilage",
+        "pct_weight": 32.4,
+        "is_refuse": 1,
+        "gram_weight": 33.7,
+        "data_points": 60,
+        "min_year_required": 2010
+      },
+      {
+        "id": 59106,
+        "fdc_id": 331897,
+        "name": "Total gram weight",
+        "pct_weight": 100.0,
+        "is_refuse": 0,
+        "gram_weight": 104.6,
+        "data_points": 60,
+        "min_year_required": 2010
+      },
+      {
+        "id": 59107,
+        "fdc_id": 331897,
+        "name": "Separable Lean",
+        "pct_weight": 57.9,
+        "is_refuse": 0,
+        "gram_weight": 60.2,
+        "data_points": 60,
+        "min_year_required": 2010
+      },
+      {
+        "id": 59108,
+        "fdc_id": 331897,
+        "name": "Handling loss",
+        "pct_weight": 1.5,
+        "is_refuse": 0,
+        "gram_weight": 1.5,
+        "data_points": 60,
+        "min_year_required": 2010
+      },
+      {
+        "id": 59109,
+        "fdc_id": 331897,
+        "name": "Edible portion",
+        "pct_weight": 57.9,
+        "is_refuse": 0,
+        "gram_weight": 60.2,
+        "data_points": 60,
+        "min_year_required": 2010
+      }
+    ]
+  }
+]
