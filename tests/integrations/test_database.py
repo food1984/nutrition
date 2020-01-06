@@ -20,7 +20,9 @@ class TestDatabase(unittest.TestCase, FixturesMixin):
             'food_nutrient.json',
             'food_attribute.json',
             'food_attribute_type.json',
-            'food_nutrient_derivation.json'
+            'food_nutrient_derivation.json',
+            'food_nutrient_source.json',
+            'food_portion.json'
         ]
 
     app = app
@@ -87,6 +89,14 @@ class TestDatabase(unittest.TestCase, FixturesMixin):
     def test_food_nutrient_derivation_all(self):
         food = db.session.query(FoodNutrientDerivation).all()
         self.assertEqual(len(food), 7)
+
+    def test_food_nutrient_source_all(self):
+        food = db.session.query(FoodNutrientSource).all()
+        self.assertEqual(len(food), 4)
+
+    def test_food_portion_all(self):
+        food = db.session.query(FoodPortion).all()
+        self.assertEqual(len(food), 4)
 
     def test_food_attribute_id(self):
         test_id = 5578

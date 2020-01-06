@@ -1,0 +1,27 @@
+[
+  {
+    "table": "food_nutrient_source",
+    "records": [
+      {
+        "id": 1,
+        "code": 1,
+        "description": "Analytical or derived from analytical"
+      },
+      {
+        "id": 2,
+        "code": 4,
+        "description": "Calculated or imputed"
+      },
+      {
+        "id": 3,
+        "code": 5,
+        "description": "Value manufacturer based label claim for added nutrients"
+      },
+      {
+        "id": 4,
+        "code": 6,
+        "description": "Aggregated data involving combinations of source codes 1, 6, 12 and/or 13"
+      }
+    ]
+  }
+]
