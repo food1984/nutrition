@@ -31,29 +31,8 @@ def init_database():
 
 @pytest.mark.usefixtures("init_database")
 class TestSchema(unittest.TestCase):
-    fixtures = [
-            'branded_food.json',
-            'food.json',
-            'food_calorie_conversion_factor.json',
-            'food_category.json',
-            'food_component.json',
-            'food_attribute.json',
-            'food_attribute_type.json'
-        ]
-
-    app = app
-    db = db
     dir_name = join(abspath(dirname(__file__)), 'files')
     client = Client(schema)
-
-    @classmethod
-    def setup_class(cls):
-        db.drop_all()
-        db.create_all()
-
-#    @classmethod
-#    def teardown_class(cls):
-#        db.drop_all()
 
     def test_food_query(self):
         test_data = TestClass(self.dir_name,
