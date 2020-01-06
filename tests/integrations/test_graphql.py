@@ -1,5 +1,6 @@
 import sys
-from json import loads, dumps
+from os.path import (join, abspath, dirname)
+from json import (loads, dumps)
 import unittest
 import pytest
 from graphene.test import Client
@@ -10,7 +11,6 @@ from app.schema import schema
 
 @pytest.fixture(scope='class')
 def init_database():
-    from os.path import (join, abspath, dirname)
     from glob import glob
     from flask_fixtures.loaders import JSONLoader
     from flask_fixtures import load_fixtures
