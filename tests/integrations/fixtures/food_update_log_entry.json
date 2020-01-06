@@ -1,0 +1,27 @@
+[
+  {
+    "table": "food_update_log_entry",
+    "records": [
+      {
+        "id": 346049,
+        "description": "LIBBYS Corned Beef With Onion, 12 OZ",
+        "last_updated": "4/1/2019"
+      },
+      {
+        "id": 346050,
+        "description": "LIBBYS Corned Beef With Chili, 12 OZ",
+        "last_updated": "4/1/2019"
+      },
+      {
+        "id": 346064,
+        "description": "WOLF Chili Without Beans",
+        "last_updated": "4/1/2019"
+      },
+      {
+        "id": 346066,
+        "description": "WOLF Turkey Chili No Beans, 15 OZ",
+        "last_updated": "4/1/2019"
+      }
+      ]
+    }
+]

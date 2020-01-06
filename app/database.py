@@ -193,6 +193,6 @@ class NutrientIncomingName(db.Model):
     nutrient_id = Column(Integer)
 
 
-class WWIEAFoodCategory(db.Model):
+class WWEIAFoodCategory(db.Model):
     code = Column(Integer, primary_key=True)
     description = Column(String(200))

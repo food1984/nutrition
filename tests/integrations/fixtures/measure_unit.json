@@ -1,0 +1,27 @@
+[
+  {
+    "table": "measure_unit",
+    "records": [
+      {
+        "id": 1000,
+        "name": "cup"
+      },
+      {
+        "id": 1001,
+        "name": "tablespoon"
+      },
+      {
+        "id": 1002,
+        "name": "teaspoon"
+      },
+      {
+        "id": 1003,
+        "name": "liter"
+      },
+      {
+        "id": 1004,
+        "name": "milliliter"
+      }
+    ]
+  }
+]

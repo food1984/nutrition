@@ -1,0 +1,31 @@
+[
+  {
+    "table": "wweia_food_category",
+    "records": [
+      {
+        "wweia_food_category_code": 1002,
+        "wweia_food_category_description": "Milk, whole"
+      },
+      {
+        "wweia_food_category_code": 1004,
+        "wweia_food_category_description": "Milk, reduced fat"
+      },
+      {
+        "wweia_food_category_code": 1006,
+        "wweia_food_category_description": "Milk, lowfat"
+      },
+      {
+        "wweia_food_category_code": 1008,
+        "wweia_food_category_description": "Milk, nonfat"
+      },
+      {
+        "wweia_food_category_code": 1202,
+        "wweia_food_category_description": "Flavored milk, whole"
+      },
+      {
+        "wweia_food_category_code": 1204,
+        "wweia_food_category_description": "Flavored milk, reduced fat"
+      }
+      ]
+    }
+]

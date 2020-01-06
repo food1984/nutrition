@@ -6,7 +6,7 @@ from app.database import (
     Nutrient, FoodNutrient, FoodNutrientConversionFactor,
     FoodNutrientDerivation, FoodNutrientSource, Food, NutrientIncomingName,
     FoodUpdateLogEntry, FoodCalorieConversionFactor,
-    FoodProteinConversionFactor, FoodAttributeType, WWIEAFoodCategory
+    FoodProteinConversionFactor, FoodAttributeType, WWEIAFoodCategory
 )
 
 
@@ -22,7 +22,14 @@ class TestDatabase(unittest.TestCase, FixturesMixin):
             'food_attribute_type.json',
             'food_nutrient_derivation.json',
             'food_nutrient_source.json',
-            'food_portion.json'
+            'food_portion.json',
+            'measure_unit.json',
+            'nutrient.json',
+            'food_nutrient_conversion_factor.json',
+            'food_protein_conversion_factor.json',
+            'nutrient_incoming_name.json',
+            'food_update_log_entry.json',
+            'wweia_food_category.json'
         ]
 
     app = app
@@ -97,6 +104,38 @@ class TestDatabase(unittest.TestCase, FixturesMixin):
     def test_food_portion_all(self):
         food = db.session.query(FoodPortion).all()
         self.assertEqual(len(food), 4)
+
+    def test_measure_unit_all(self):
+        food = db.session.query(MeasureUnit).all()
+        self.assertEqual(len(food), 5)
+
+    def test_nutrient_all(self):
+        food = db.session.query(Nutrient).all()
+        self.assertEqual(len(food), 5)
+
+    def test_nutrient_incoming_name_all(self):
+        food = db.session.query(NutrientIncomingName).all()
+        self.assertEqual(len(food), 6)
+
+    def test_food_nutrient_conversion_factor_all(self):
+        food = db.session.query(FoodNutrientConversionFactor).all()
+        self.assertEqual(len(food), 7)
+
+    def test_food_protein_conversion_factor_all(self):
+        food = db.session.query(FoodProteinConversionFactor).all()
+        self.assertEqual(len(food), 6)
+
+    def test_food_attribute_type_all(self):
+        food = db.session.query(FoodAttributeType).all()
+        self.assertEqual(len(food), 5)
+
+    def test_food_update_log_entry_all(self):
+        food = db.session.query(FoodUpdateLogEntry).all()
+        self.assertEqual(len(food), 4)
+
+    def test_wweia_food_category_all(self):
+        food = db.session.query(WWEIAFoodCategory).all()
+        self.assertEqual(len(food), 6)
 
     def test_food_attribute_id(self):
         test_id = 5578

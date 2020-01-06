@@ -1,0 +1,42 @@
+[
+  {
+    "table": "nutrient",
+    "records": [
+      {
+        "id": 1002,
+        "name": "Nitrogen",
+        "unit_name": "G",
+        "nutrient_nbr": 202,
+        "rank": 500
+      },
+      {
+        "id": 1003,
+        "name": "Protein",
+        "unit_name": "G",
+        "nutrient_nbr": 203,
+        "rank": 600
+      },
+      {
+        "id": 1004,
+        "name": "Total lipid (fat)",
+        "unit_name": "G",
+        "nutrient_nbr": 204,
+        "rank": 800
+      },
+      {
+        "id": 1005,
+        "name": "Carbohydrate, by difference",
+        "unit_name": "G",
+        "nutrient_nbr": 205,
+        "rank": 1110
+      },
+      {
+        "id": 1007,
+        "name": "Ash",
+        "unit_name": "G",
+        "nutrient_nbr": 207,
+        "rank": 1000
+      }
+      ]
+    }
+]

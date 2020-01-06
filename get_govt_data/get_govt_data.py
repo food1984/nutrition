@@ -6,14 +6,6 @@ from zipfile37 import ZipFile
 import glob
 from app import db
 
-from app.database import (
-    FoodAttribute, FoodCategory, FoodComponent, FoodPortion, MeasureUnit,
-    Nutrient, FoodNutrient, FoodNutrientConversionFactor,
-    FoodNutrientDerivation, FoodNutrientSource, Food, NutrientIncomingName,
-    FoodUpdateLogEntry, FoodCalorieConversionFactor,
-    FoodProteinConversionFactor, FoodAttributeType, WWIEAFoodCategory
-)
-
 
 def cleanup(tmp_dir):
     logging.info('Cleaning up, directory: {}'.format(tmp_dir))

@@ -1,0 +1,31 @@
+[
+  {
+    "table": "food_protein_conversion_factor",
+    "records": [
+      {
+        "food_nutrient_conversion_factor_id": 22504,
+        "value": 6.25
+      },
+      {
+        "food_nutrient_conversion_factor_id": 22506,
+        "value": 6.38
+      },
+      {
+        "food_nutrient_conversion_factor_id": 22508,
+        "value": 6.25
+      },
+      {
+        "food_nutrient_conversion_factor_id": 22509,
+        "value": 0.0
+      },
+      {
+        "food_nutrient_conversion_factor_id": 22511,
+        "value": 6.25
+      },
+      {
+        "food_nutrient_conversion_factor_id": 22513,
+        "value": 6.25
+      }
+    ]
+  }
+]
