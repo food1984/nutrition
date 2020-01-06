@@ -1,5 +1,6 @@
 import unittest
-from flask_fixtures import FixturesMixin
+import pytest
+from os.path import join
 from app import (app, db)
 from app.database import (
     FoodAttribute, FoodCategory, FoodComponent, FoodPortion, MeasureUnit,
@@ -10,40 +11,28 @@ from app.database import (
 )
 
 
-class TestDatabase(unittest.TestCase, FixturesMixin):
-    fixtures = [
-            'branded_food.json',
-            'food_calorie_conversion_factor.json',
-            'food.json',
-            'food_category.json',
-            'food_component.json',
-            'food_nutrient.json',
-            'food_attribute.json',
-            'food_attribute_type.json',
-            'food_nutrient_derivation.json',
-            'food_nutrient_source.json',
-            'food_portion.json',
-            'measure_unit.json',
-            'nutrient.json',
-            'food_nutrient_conversion_factor.json',
-            'food_protein_conversion_factor.json',
-            'nutrient_incoming_name.json',
-            'food_update_log_entry.json',
-            'wweia_food_category.json'
-        ]
+@pytest.fixture(scope='class')
+def init_database():
+    from os.path import (abspath, dirname)
+    from glob import glob
+    from flask_fixtures.loaders import JSONLoader
+    from flask_fixtures import load_fixtures
 
-    app = app
-    db = db
+    db.drop_all()
+    db.create_all()
 
-    @classmethod
-    def setup_class(cls):
-        db.drop_all()
-        db.create_all()
+    base_dir = abspath(dirname(__file__))
 
-    @classmethod
-    def teardown_class(cls):
-        db.drop_all()
+    for fixture_file in glob(join(base_dir, 'fixtures', '*.json')):
+        fixtures = JSONLoader().load(fixture_file)
+        load_fixtures(db, fixtures)
 
+    yield db
+    db.drop_all()
+
+
+@pytest.mark.usefixtures("init_database")
+class TestDatabase(unittest.TestCase):
     def test_food_all(self):
         food = db.session.query(Food).all()
         self.assertEqual(len(food), 5, "Not equal to five food rows")

@@ -2,38 +2,35 @@ import sys
 from os.path import (join, abspath, dirname)
 from json import loads, dumps
 import unittest
+import pytest
 from graphene.test import Client
-from flask_fixtures import FixturesMixin
 from testclass.testclass import TestClass
 from app import (app, db)
 from app.schema import schema
 
 
-""""
-@pytest.fixture(scope='module')
+@pytest.fixture(scope='class')
 def init_database():
-    fixtures = [
-            'branded_food.json',
-            'food.json',
-            'food_calorie_conversion_factor.json',
-            'food_category.json',
-            'food_component.json',
-            'food_attribute.json',
-            'food_attribute_type.json'
-        ]
-
-    dir_name = join(abspath(dirname(__file__)), 'files')
+    from os.path import (abspath, dirname)
+    from glob import glob
+    from flask_fixtures.loaders import JSONLoader
+    from flask_fixtures import load_fixtures
 
     db.drop_all()
     db.create_all()
 
-    yield db  # this is where the testing happens!
+    base_dir = abspath(dirname(__file__))
 
+    for fixture_file in glob(join(base_dir, 'fixtures', '*.json')):
+        fixtures = JSONLoader().load(fixture_file)
+        load_fixtures(db, fixtures)
+
+    yield db
     db.drop_all()
-"""
 
 
-class TestSchema(unittest.TestCase, FixturesMixin):
+@pytest.mark.usefixtures("init_database")
+class TestSchema(unittest.TestCase):
     fixtures = [
             'branded_food.json',
             'food.json',
