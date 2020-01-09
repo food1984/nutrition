@@ -5,6 +5,8 @@ omit =
     */site-packages/*
     */Python??/Lib/*
     */local/lib/python3.7/*
+    */usr/local/lib*
+    */x64/lib/python??/*
 include = *.py
 
 [report]
