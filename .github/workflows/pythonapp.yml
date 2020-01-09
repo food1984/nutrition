@@ -37,6 +37,6 @@ jobs:
         
     - name: Publish reports
       with:
-        CODACY_PROJECT_TOKEN: ${{ secret.CODACY_PROJECT_TOKEN }}
+        CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
       run: |
         python-codacy-coverage -r test-results/coverage.xml
