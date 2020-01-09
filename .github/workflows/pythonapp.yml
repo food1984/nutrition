@@ -36,5 +36,7 @@ jobs:
         coverage html --omit=/usr/local/lib*
         
     - name: Publish reports
+      with:
+        CODACY_PROJECT_TOKEN: ${{ secret.CODACY_PROJECT_TOKEN }}
       run: |
-        python-codacy-coverage -r test-results/coverage.xml      
+        python-codacy-coverage -r test-results/coverage.xml
