@@ -20,3 +20,7 @@ Error: No such command "initdb".
 
 #### Solution
 Make sure `FLASK_APP` variable is set to 'nutrition.py'
+
+```bash
+export FLASK_APP=nutrition.py
+```

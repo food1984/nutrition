@@ -98,7 +98,7 @@ class FoodNutrient(db.Model):
     nutrient_id = Column(Integer, ForeignKey('nutrient.id'))
     amount = Column(Float)
     data_points = Column(Integer)
-    derivation_id = Column(Integer)
+    derivation_id = Column(Integer, ForeignKey('food_nutrient_derivation.id'))
     min = Column(Float)
     max = Column(Float)
     median = Column(Float)
@@ -107,6 +107,8 @@ class FoodNutrient(db.Model):
     food = relationship("Food",
                         back_populates="food_nutrient")
     nutrient = relationship("Nutrient",
+                    back_populates="food_nutrient")
+    derivation = relationship("FoodNutrientDerivation",
                     back_populates="food_nutrient")
 
 

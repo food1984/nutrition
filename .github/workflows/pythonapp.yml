@@ -26,6 +26,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
+        cp config-sample config.py
         pip install -r test_requirements.txt
         coverage run -m pytest --junitxml=test-results/test-results.xml
 

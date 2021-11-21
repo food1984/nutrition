@@ -28,6 +28,7 @@ htmlcov/
 *,cover
 test-results/
 test-reports/
+config.py
 
 # VsCode
 .vscode/
